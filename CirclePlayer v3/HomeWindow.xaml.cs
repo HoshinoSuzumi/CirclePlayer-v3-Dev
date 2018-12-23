@@ -36,13 +36,13 @@ namespace CirclePlayer_v3
             {
                 if (isFirstChange)
                 {
-                    DisableButton(false, search_button, TimeSpan.FromSeconds(0.3));
+                    DisableButton(false, search_button, TimeSpan.FromSeconds(0.5));
                     isFirstChange = false;
                 }
             }
             else
             {
-                DisableButton(true, search_button, TimeSpan.FromSeconds(0.3));
+                DisableButton(true, search_button, TimeSpan.FromSeconds(0.5));
                 isFirstChange = true;
             }
         }
@@ -50,11 +50,13 @@ namespace CirclePlayer_v3
         private void DisableButton(bool action, Button button, TimeSpan duration)
         {
             DoubleAnimation fadeAnimation = action ? new DoubleAnimation() { From = 1, To = 0, Duration = duration } : new DoubleAnimation() { From = 0, To = 1, Duration = duration };
+            DoubleAnimation fadeAnimation1 = action ? new DoubleAnimation() { From = 0, To = 1, Duration = duration } : new DoubleAnimation() { From = 1, To = 0, Duration = duration };
             try
             {
                 button.BeginAnimation(OpacityProperty, fadeAnimation);
+                search_tip.BeginAnimation(OpacityProperty, fadeAnimation1);
                 button.IsEnabled = !action;
-                search_tip.Visibility = action ? Visibility.Visible : Visibility.Hidden;
+                //search_tip.Visibility = action ? Visibility.Visible : Visibility.Hidden;
             }
             catch { }
         }

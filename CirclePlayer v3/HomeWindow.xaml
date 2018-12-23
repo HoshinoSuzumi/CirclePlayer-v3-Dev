@@ -40,7 +40,7 @@
             <TextBox x:Name="search_box" BorderThickness="0" Background="Transparent" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Width="300" Foreground="#FFFFFFFF" FontSize="20" FontWeight="Bold" CaretBrush="White" TextChanged="SearchButton_Control"/>
         </Border>
         <Button x:Name="search_button" Content="搜索" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Height="40" Click="Search_button_Click" Margin="420,329,420,171"/>
-        <Label x:Name="search_tip" Content="输入歌曲名称以搜索" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" FontSize="20" FontWeight="Bold" Margin="385,333,385,173"/>
+        <Label x:Name="search_tip" Content="在线搜索歌曲" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" FontSize="20" FontWeight="Bold" Margin="385,333,385,173"/>
 
 
     </Grid>

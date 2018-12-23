@@ -18,6 +18,11 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         
         Title="ListmusicWindow" Height="540" Width="960" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="ListViewItemStyle" TargetType="{x:Type ListViewItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid Background="#FF3E3E40">
         <materialDesign:Card MouseLeftButtonDown="DragWindow" Padding="32" Height="60" Background="#FF3E3E40" UniformCornerRadius="0"/>
         <Image Source="resources\icon.png" HorizontalAlignment="Left" Height="35" Width="35" VerticalAlignment="Top" Margin="10,13,0,0"/>
@@ -30,15 +35,20 @@
                 </Canvas>
             </Viewbox>
         </Button>
-        <materialDesign:Card Padding="32" Margin="16,65,16,0" Background="#CCFFFFFF">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}"><Label>有关</Label><Label x:Name="inputText">N/A</Label><Label>的搜索</Label></TextBlock>
+        <materialDesign:Card Padding="32" Margin="16,65,16,0" Background="#CC00B832">
+            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}"><Label Foreground="#DDFFFFFF">有关</Label><Label x:Name="inputText" Foreground="#DDFFFFFF">N/A</Label><Label Foreground="#DDFFFFFF">的搜索</Label></TextBlock>
         </materialDesign:Card>
-        <ListView HorizontalAlignment="Left" Height="362" Margin="16,168,0,0" VerticalAlignment="Top" Width="894">
+        <ListView x:Name="data_list" HorizontalAlignment="Left" Height="362" Margin="16,168,0,0" VerticalAlignment="Top" Width="928" Background="#FF3E3E40" Foreground="White" BorderBrush="#FF3E3E40">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn DisplayMemberBinding="{Binding music_name}" Header="音乐名称" Width="250"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding music_author}" Header="作者" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding music_id}" Header="音乐 ID" Width="120"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding owner_link}" Header="官方页面" Width="200"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding music_link}" Header="下载到本地" Width="108"/>
                 </GridView>
             </ListView.View>
         </ListView>
+
     </Grid>
 </Window>

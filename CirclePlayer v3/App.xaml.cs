@@ -22,7 +22,7 @@ namespace CirclePlayer_v3
                 switch (args[0])
                 {
                     case "listmusic":
-                        ListmusicWindow listmusicWindow = new ListmusicWindow(args[0], args[1], args[2], args[3], args[4]);
+                        ListmusicWindow listmusicWindow = new ListmusicWindow(args[0], args[1], args[2], args[3], args[4], true);
                         Application.Current.MainWindow = listmusicWindow;
                         listmusicWindow.Show();
                         break;
